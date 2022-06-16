@@ -25,3 +25,8 @@ $router->get('/api/empleados/{id}', 'EmpleadosController@getById');
 
 // Set the route for get all pedidos api
 $router->get('/api/pedidos', 'PedidosController@getAll');
+// Set the route for get pedidos by date and hour and client api
+$router->get(
+    '/api/pedidos/{date}/{hour}/{client}',
+    'PedidosController@getByDateHourClient'
+);
