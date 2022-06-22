@@ -22,6 +22,8 @@ $router->get('/', function () use ($router) {
 $router->get('/api/empleados', 'EmpleadosController@getAll');
 // Set the route for get empleados by id api
 $router->get('/api/empleados/{id}', 'EmpleadosController@getById');
+// Set the route for create empleado
+$router->post('/api/empleados', 'EmpleadosController@create');
 
 // Set the route for get all pedidos api
 $router->get('/api/pedidos', 'PedidosController@getAll');
@@ -30,3 +32,4 @@ $router->get(
     '/api/pedidos/{date}/{hour}/{client}',
     'PedidosController@getByDateHourClient'
 );
+

@@ -15,16 +15,14 @@ class PedidosController extends Controller
     {
         try {
             $listado  = Pedidos::select(
-                "pedidos.fecha",
-                "pedidos.hora",
-                "pedidos.cliente",
+                "pedidos.*",
                 "empleados.nombres as nombre_empleado",
                 "tipos_mesas.nombre as tipo_mesa"
             )
                 ->join("empleados", "empleados.id", "=", "pedidos.id_empleado")
                 ->join("mesas", "mesas.id", "=", "pedidos.id_mesa")
                 ->join("tipos_mesas", "tipos_mesas.id", "=", "mesas.id_tipo_mesa")
-                ->first();
+                ->get();
 
             return response()->json($listado);
         } catch (\Exception $e) {
