@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pedidos;
 use App\Models\Empleados;
+use Illuminate\Http\Request;
 
 class PedidosController extends Controller
 {
@@ -53,6 +54,43 @@ class PedidosController extends Controller
                 ->where('cliente', $client)
                 ->first();
             return response()->json($pedido);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 404);
+        }
+    }
+
+    /**
+     * Create pedido
+     * @return \Illuminate\Http\Response|\Laravel\Lumen\Http\ResponseFactory
+     */
+    public function create(Request $request)
+    {
+        try {
+            $this->validate($request, [
+                'fecha' => ['required'],
+                'hora' => ['required'],
+                'cliente' => ['required'],
+                'hora_entrega_estimada' => ['required'],
+                'id_mesa' => ['required'],
+                'id_empleado' => ['required'],
+            ]);
+            $fecha = $request->input('fecha');
+            $hora = $request->input('hora');
+            $cliente = $request->input('cliente');
+            $hora_entrega_estimada = $request->input('hora_entrega_estimada');
+            $id_mesa = $request->input('id_mesa');
+            $id_empleado = $request->input('id_empleado');
+
+            $pedido = Pedidos::create([
+                'fecha' => $fecha,
+                'hora' => $hora,
+                'cliente' => $cliente,
+                'hora_entrega_estimada' => $hora_entrega_estimada,
+                'id_mesa' => $id_mesa,
+                'id_empleado' => $id_empleado
+            ]);
+            
+            return response()->json("Se creo el pedido");
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 404);
         }

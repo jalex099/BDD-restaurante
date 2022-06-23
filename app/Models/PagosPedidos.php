@@ -22,4 +22,6 @@ class PagosPedidos extends Model
         'iva',
         'total'
     ];
+    
+    public $timestamps = false;
 }

@@ -19,4 +19,6 @@ class Pedidos extends Model
         'id_empleado',
         'esta_pagado'
     ];
+    protected $primaryKey = 'hora';
+    public $timestamps = false;
 }

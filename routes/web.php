@@ -32,4 +32,13 @@ $router->get(
     '/api/pedidos/{date}/{hour}/{client}',
     'PedidosController@getByDateHourClient'
 );
+// Set the route for create pedidos
+$router->post('/api/pedidos', 'PedidosController@create');
+// Pagos pedidos
+$router->get('/api/pagos_pedidos', 'PagosPedidosController@getAll');
+$router->post('/api/pagos_pedidos', 'PagosPedidosController@create');
 
+
+// Set the route for mesas
+$router->get('/api/mesas', 'MesasController@getAll');
+$router->get('/api/mesas/{id}', 'MesasController@getById');
