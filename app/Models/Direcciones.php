@@ -14,4 +14,5 @@ class Direcciones extends Model
         'id_departamento',
         'id_municipio'
     ];
+    public $timestamps = false;
 }

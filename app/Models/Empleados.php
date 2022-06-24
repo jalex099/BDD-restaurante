@@ -18,4 +18,5 @@ class Empleados extends Model
         'isss',
         'id_cargo'
     ];
+    public $timestamps = false;
 }

@@ -12,4 +12,5 @@ class Cargos extends Model
         'nombres',
         'salario'
     ];
+    public $timestamps = false;
 }

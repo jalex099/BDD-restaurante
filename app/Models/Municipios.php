@@ -11,4 +11,5 @@ class Municipios extends Model
     protected $fillable =  [
         'municipio'
     ];
+    public $timestamps = false;
 }

@@ -12,4 +12,5 @@ class DetalleCombos extends Model
         'id_combo',
         'id_producto'
     ];
+    public $timestamps = false;
 }

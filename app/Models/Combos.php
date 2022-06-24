@@ -12,4 +12,5 @@ class Combos extends Model
         'nombre',
         'precio'
     ];
+    public $timestamps = false;
 }

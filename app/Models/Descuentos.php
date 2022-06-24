@@ -13,4 +13,5 @@ class Descuentos extends Model
         'descuento',
         'esta_activo'
     ];
+    public $timestamps = false;
 }

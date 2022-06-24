@@ -12,4 +12,5 @@ class Mesas extends Model
         'id_tipo_mesa',
         'disponibilidad'
     ];
+    public $timestamps = false;
 }

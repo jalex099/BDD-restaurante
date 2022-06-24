@@ -11,4 +11,5 @@ class Departamentos extends Model
     protected $fillable =  [
         'departamento'
     ];
+    public $timestamps = false;
 }

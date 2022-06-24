@@ -12,4 +12,5 @@ class TiposMesas extends Model
         'nombre',
         'capacidad'
     ];
+    public $timestamps = false;
 }

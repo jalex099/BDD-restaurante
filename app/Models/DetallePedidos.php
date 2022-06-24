@@ -20,4 +20,5 @@ class DetallePedidos extends Model
         'total_descuento',
         'importe_neto'
     ];
+    public $timestamps = false;
 }

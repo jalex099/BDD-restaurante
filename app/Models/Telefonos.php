@@ -12,4 +12,5 @@ class Telefonos extends Model
         'telefono',
         'id_empleado'
     ];
+    public $timestamps = false;
 }

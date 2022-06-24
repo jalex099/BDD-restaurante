@@ -44,16 +44,4 @@ class EmpleadosController extends Controller
         }
     }
 
-    /**
-     * Create an employee
-     * @return \Illuminate\Http\Response|\Laravel\Lumen\Http\ResponseFactory
-     */
-    public function create()
-    {
-        try {
-            return "Creado";
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
-    }
 }
